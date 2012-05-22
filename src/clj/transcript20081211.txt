@@ -1,0 +1,204 @@
+Clojure
+user=> #'user/*urls*
+user=> #'user/*urls*
+user=> #'user/*protocols*
+user=> #'user/extract-protocol
+user=> #'user/defurl
+user=> #'user/make-protocol-fns
+user=> @*protocols*
+("http" "file" "ldap" "ftp" "sql")
+user=> (make-protocol-fns)
+http
+file
+ldap
+ftp
+sql
+nil
+user=> (http)
+java.lang.Exception: Unable to resolve symbol: http in this context (NO_SOURCE_FILE:48)
+user=> (macroexpand-1 '(make-protocol-fns))
+(make-protocol-fns)
+user=> #'user/make-protocol-fns
+user=> (make-protocol-fns)
+nil
+user=> #'user/make-protocol-fns
+user=> (macroexpand-1 '(make-protocol-fns))
+(make-protocol-fns)
+user=> (make-protocol-fns)
+defhttp
+deffile
+defldap
+defftp
+defsql
+nil
+user=> (defhttp)
+java.lang.Exception: Unable to resolve symbol: defhttp in this context (NO_SOURCE_FILE:70)
+user=> (let [x# 1] (def x (println x#)))
+1
+#'user/x
+user=> (x)
+java.lang.NullPointerException (NO_SOURCE_FILE:0)
+user=> (let [x# 1] (def x (println "x")))
+x
+#'user/x
+user=> (x)
+java.lang.NullPointerException (NO_SOURCE_FILE:0)
+user=> (user/x)
+java.lang.NullPointerException (NO_SOURCE_FILE:0)
+user=> (let [x# 1] (defn x [] (println x#)))
+#'user/x
+user=> (x)
+1
+nil
+user=> (let [y# (symbol "defbla") x# 1] (def y# (fn [] (println x#))))
+#'user/y#
+user=> (y#)
+1
+nil
+user=> (sym#)
+x
+nil
+user=> (let [y# (symbol "defbla") x# 1] (def ~y# (fn [] (println x#))))
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:81)
+user=> (let [y# (symbol "defbla") x# 1] (println y#) (def ~y# (fn [] (println x#))))
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:82)
+user=> (let [y# (symbol "defbla") x# 1] (println y#) (def y# (fn [] (println x#))))
+defbla
+#'user/y#
+user=> (let [y# (symbol "defbla") x# 1] (println ~y#) (def y# (fn [] (println x#))))
+java.lang.RuntimeException: java.lang.IllegalArgumentException: No method for dispatch value: class clojure.lang.LispReader$Unquote (NO_SOURCE_FILE:0)
+user=> (let [y# (symbol "defbla") x# 1] (def `~y# (fn [] (println x#))))
+#'user/y#
+user=> (let [y# (symbol "defbla") x# 1] (def '~y# (fn [] (println x#))))
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:86)
+user=> (let [y# (symbol "defbla") x# 1] `(def ~y# (fn [] (println x#))))
+(def defbla (clojure.core/fn [] (clojure.core/println x__119)))
+user=> nil
+user=> (make-protocol-fns)
+nil
+user=> (defhttp)
+java.lang.Exception: Unable to resolve symbol: defhttp in this context (NO_SOURCE_FILE:97)
+user=> (eval (let [y# (symbol "defbla") x# 1] `(def ~y# (fn [] (println x#)))))
+java.lang.Exception: Unable to resolve symbol: x__130 in this context (NO_SOURCE_FILE:0)
+user=> (eval (let [y# (symbol "defbla") x# 1] `(def ~y# (fn [] (println "x")))))
+#'user/defbla
+user=> (let [y# (symbol "defbla") x# 1] `~(def ~y# (fn [] (println x#))))
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:100)
+user=> (let [y# (symbol "defbla") x# 1] `(def ~y# (fn [] (println "x"))))
+(def defbla (clojure.core/fn [] (clojure.core/println "x")))
+user=> nil
+user=> (make-protocol-fns)
+java.lang.Exception: Can't let qualified name: user/p (NO_SOURCE_FILE:110)
+user=> p
+java.lang.Exception: Unable to resolve symbol: p in this context (NO_SOURCE_FILE:0)
+user=> user/p
+java.lang.Exception: No such var: user/p (NO_SOURCE_FILE:0)
+user=> (macroexpand-1 '(make-protocol-fns))
+(clojure.core/doseq [user/p (clojure.core/deref user/*protocols*)] (clojure.core/let [sym__147 (clojure.core/symbol (clojure.core/str "def" user/p))] (def sym__147 (clojure.core/fn [] (clojure.core/println "x")))))
+user=> nil
+user=> (make-protocol-fns)
+nil
+user=> (defhttp)
+java.lang.Exception: Unable to resolve symbol: defhttp in this context (NO_SOURCE_FILE:123)
+user=> (macroexpand-1 '(make-protocol-fns))
+(clojure.core/doseq [p__156 (clojure.core/deref user/*protocols*)] (clojure.core/let [sym__157 (clojure.core/symbol (clojure.core/str "def" p__156))] (def sym__157 (clojure.core/fn [] (clojure.core/println "x")))))
+user=> nil
+user=> (macroexpand-1 '(make-protocol-fns))
+(clojure.core/doseq [p__170 (clojure.core/deref user/*protocols*)] (clojure.core/let [sym__171 (clojure.core/symbol (clojure.core/str "def" p__170))] (def #<user$make_protocol_fns__47$sym_SHARP___49 user$make_protocol_fns__47$sym_SHARP___49@13e0aba> (clojure.core/fn [] (clojure.core/println "x")))))
+user=> (make-protocol-fns)
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:134)
+user=> (let [y# (symbol "defbla") x# 1] `(def ~y# (fn [] (println "x"))))
+(def defbla (clojure.core/fn [] (clojure.core/println "x")))
+user=> (do (let [y# (symbol "defbla") x# 1] `(def ~y# (fn [] (println "x")))))
+(def defbla (clojure.core/fn [] (clojure.core/println "x")))
+user=> (let [y# (symbol "defbla") x# 1] (do `(def ~y# (fn [] (println "x")))))
+(def defbla (clojure.core/fn [] (clojure.core/println "x")))
+user=> (let [y# (symbol "defbla") x# 1] `(def ~y# (fn [] (println "x"))))
+(def defbla (clojure.core/fn [] (clojure.core/println "x")))
+user=> (let [y# (symbol "defbla") x# 1 z# (def ~y# (fn [] (println "x")))] z#)
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:139)
+user=> (defmacro tm [] `(def x (fn [] "bla")))
+nil
+user=> (tm)
+#'user/x
+user=> (defmacro tm [x] `(def ~x (fn [] "bla")))
+nil
+user=> (tm)
+java.lang.IllegalArgumentException: Wrong number of args passed to: user$tm (NO_SOURCE_FILE:143)
+user=> (tm 'hallo)
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:144)
+user=> (defmacro tm [x] `(def (symbol ~x) (fn [] "bla")))
+nil
+user=> (tm 'hallo)
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:146)
+user=> (defmacro tm [x] `(def (symbol x) (fn [] "bla")))
+nil
+user=> (tm 'hallo)
+java.lang.Exception: Second argument to def must be a Symbol (NO_SOURCE_FILE:148)
+user=> (defmacro tm [x] (let z# (symbol x)] `(def ~z# (fn [] "bla"))))
+java.lang.Exception: Unmatched delimiter: ]
+user=> java.lang.Exception: Unable to resolve symbol: z# in this context (NO_SOURCE_FILE:0)
+user=> java.lang.Exception: Unmatched delimiter: )
+user=> java.lang.Exception: Unmatched delimiter: )
+user=> (defmacro tm [x] (let [z# (symbol x)] `(def ~z# (fn [] "bla"))))
+nil
+user=> (tm 'hallo)
+java.lang.ClassCastException: clojure.lang.PersistentList cannot be cast to java.lang.String (NO_SOURCE_FILE:151)
+user=> (tm "hallo")
+#'user/hallo
+user=> (defmacro tm [a] (doseq [x a] (let [z# (symbol x)] `(def ~z# (fn [] "bla")))))
+nil
+user=> (tm "hallo")
+java.lang.ClassCastException: java.lang.Character cannot be cast to java.lang.String (NO_SOURCE_FILE:154)
+user=> (tm '("hallo"))
+java.lang.ClassCastException: clojure.lang.PersistentList cannot be cast to java.lang.String (NO_SOURCE_FILE:155)
+user=> (doseq [a "hallo"] (println a))
+h
+a
+l
+l
+o
+nil
+user=> (doseq [a ("hallo")] (println a))
+java.lang.ClassCastException: java.lang.String cannot be cast to clojure.lang.IFn (NO_SOURCE_FILE:0)
+user=> (doseq [a '("hallo")] (println a))
+hallo
+nil
+user=> (tm '("hallo"))
+java.lang.ClassCastException: clojure.lang.PersistentList cannot be cast to java.lang.String (NO_SOURCE_FILE:159)
+user=> (defmacro tm [a] (doseq [x a] (println x) (let [z# (symbol x)] `(def ~z# (fn [] "bla")))))
+nil
+user=> (tm '("hallo"))
+quote
+(hallo)
+java.lang.ClassCastException: clojure.lang.PersistentList cannot be cast to java.lang.String (NO_SOURCE_FILE:161)
+user=> (macroexpand '(tm '("hallo")))
+quote
+(hallo)
+java.lang.ClassCastException: clojure.lang.PersistentList cannot be cast to java.lang.String (NO_SOURCE_FILE:0)
+user=> (macroexpand-1 '(tm '("hallo")))
+quote
+(hallo)
+java.lang.ClassCastException: clojure.lang.PersistentList cannot be cast to java.lang.String (NO_SOURCE_FILE:0)
+user=> (macroexpand-1 '(tm ("hallo")))
+hallo
+nil
+user=> (macroexpand-1 '(tm "hallo"))
+h
+java.lang.ClassCastException: java.lang.Character cannot be cast to java.lang.String (NO_SOURCE_FILE:0)
+user=> (defmacro tm [a] (doseq [x a] (println x) (let [z# (symbol (str x))] `(def ~z# (fn [] "bla")))))
+nil
+user=> (macroexpand-1 '(tm "hallo"))
+h
+a
+l
+l
+o
+nil
+user=> (h)
+java.lang.Exception: Unable to resolve symbol: h in this context (NO_SOURCE_FILE:168)
+user=> (defmacro tm [a] (let [z# (symbol (str x))] `(def ~z# (fn [] "bla"))))
+nil
+user=> (macroexpand-1 '(tm "hallo"))
+(def user$eval__197$x__199@1777b1 (clojure.core/fn [] "bla"))
+user=> 

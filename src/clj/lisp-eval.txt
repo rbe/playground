@@ -1,0 +1,1 @@
+(lisp-eval-region (point-min) (point-max))
