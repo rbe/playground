@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <GridPane hgap="10.0" prefHeight="485.0" prefWidth="1000.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label text="Notwendigkeit der lüftungstechnischen Maßnahme" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" />
+        <Label text="Feuchteschutz: Gesamt-Außenluftvolumenstrom" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+        <Label text="Luftvolumenstrom durch Infiltration" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+        <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+          <children>
+            <Label minWidth="54.0" text="9999,99" />
+            <Label text="m3/h" />
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+          <children>
+            <Label text="9999,99" />
+            <Label text="m3/h" />
+          </children>
+        </HBox>
+        <Label text="Gesamt-Außenluftvolumenströme für Nutzungseinheit" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+        <Label text="Luftwechsel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Label text="Luftvolumenstrom" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Label text="Lüftung zum Feuchteschutz" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+        <Label text="Reduzierte Lüftung" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+        <Label text="Nennlüftung" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+        <Label text="Intensivlüftung" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+        <Label text="m3/h" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+        <Label text="l/h" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="-Infinity" prefWidth="20.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="121.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="165.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="40.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="111.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="44.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="215.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="56.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="84.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="54.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import org.tbee.javafx.scene.layout.fxml.*?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+<?scenebuilder-classpath-element ../../../../../../../Downloads/miglayout-javafx-4.2.jar?>
+<?scenebuilder-classpath-element ../../../../../../../Downloads/miglayout-4.0.jar?>
+
+<MigPane id="rootPane" cols="[label, pref!][grow, 50::]" layout="insets 20" rows="" styleClass="main-panel" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="eu.artofcoding.test.javafx.HelloController">
+  <Label text="First Name:" />
+  <TextField fx:id="firstNameField" prefColumnCount="30" MigPane.cc="growx, wrap" />
+  <Label text="Last Name:" />
+  <TextField fx:id="lastNameField" layoutX="96.0" layoutY="46.0" prefColumnCount="30" prefWidth="147.0" MigPane.cc="growx, wrap" />
+  <Button onAction="#sayHello" text="Say Hello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
+  <Label fx:id="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
+  <TextField id="" fx:id="stringTextField" layoutX="790.0" layoutY="20.0" prefWidth="200.0" promptText="string" />
+  <Button fx:id="showFileChooser" layoutX="504.0" layoutY="138.0" mnemonicParsing="false" onAction="#showFileChooser" text="Button" />
+</MigPane>
